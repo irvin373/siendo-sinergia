@@ -1,0 +1,61 @@
+---
+import { CURRENCY } from "../constants";
+
+interface Props {
+  title: string;
+  description: string;
+  price: number;
+  duration: string;
+  level: string;
+  tags?: string[];
+}
+
+const { title, description, price, duration, level, tags = [] } = Astro.props;
+---
+
+<div
+  class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full border border-slate-100"
+>
+  <div class="p-8 flex-grow">
+    <div class="flex justify-between items-start mb-4">
+      <span
+        class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded capitalize"
+      >
+        {level}
+      </span>
+      <span class="text-slate-500 text-sm">
+        {duration}
+      </span>
+    </div>
+    <h3 class="text-2xl font-bold text-slate-800 mb-3">{title}</h3>
+    <p class="text-slate-600 mb-6">{description}</p>
+
+    <div class="flex flex-wrap gap-2 mb-6">
+      {
+        tags.map((tag) => (
+          <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">
+            {tag}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="bg-slate-50 p-6 border-t border-slate-100 mt-auto">
+    <div class="flex justify-between items-center mb-4">
+      <span class="text-slate-500 text-sm font-medium">Precio</span>
+      <div class="text-right">
+        <span class="text-3xl font-bold text-slate-900"
+          >{price}
+          <span class="text-lg text-slate-500 font-normal">{CURRENCY}</span
+          ></span
+        >
+      </div>
+    </div>
+    <button
+      class="w-full block text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+    >
+      Inscríbete Ahora
+    </button>
+  </div>
+</div>

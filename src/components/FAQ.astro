@@ -1,0 +1,77 @@
+---
+const faqs = [
+  {
+    question: "¿Es legal estudiar sobre psicodélicos en Bolivia?",
+    answer:
+      "Sí. Nuestra formación es 100% educativa y teórica sobre el marco científico, terapéutico y legal. No promovemos el consumo ni facilitamos sustancias ilegales.",
+  },
+  {
+    question: "¿Los certificados tienen aval académico?",
+    answer:
+      "Nuestros diplomas son emitidos por PsicodeAR, institución líder en la región. Son valorados por profesionales de la salud mental en toda Latinoamérica.",
+  },
+  {
+    question: "¿Necesito ser psicólogo o médico?",
+    answer:
+      "Para la 'Formación en Terapia Asistida' se prioriza a profesionales de la salud, pero otros cursos como 'Reglas Claras' o el Workshop de Hongos están abiertos al público general interesado.",
+  },
+  {
+    question: "¿Cómo funcionan los pagos desde Bolivia?",
+    answer:
+      "Hemos simplificado todo. Puedes pagar directamente en Bolivianos mediante QR Simple, Tigo Money o transferencia bancaria local. Emitimos factura con NIT.",
+  },
+  {
+    question: "¿El curso incluye sustancias?",
+    answer:
+      "No. Psicode Bolivia es una entidad educativa y de reducción de daños. Nuestros talleres son estrictamente informativos y de capacitación profesional.",
+  },
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-12">
+      Preguntas Frecuentes
+    </h2>
+
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group border border-slate-200 rounded-lg bg-slate-50 open:bg-white open:shadow-md transition-all duration-200">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-slate-800 hover:text-indigo-600 transition-colors list-none">
+              <span>{faq.question}</span>
+              <span class="transition-transform group-open:rotate-180">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 animate-fade-in">
+              {faq.answer}
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

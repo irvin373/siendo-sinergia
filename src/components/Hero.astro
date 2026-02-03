@@ -1,0 +1,42 @@
+---
+import { CONTACT } from "../constants";
+---
+
+<section
+  class="relative bg-gradient-to-br from-indigo-900 to-slate-900 text-white py-20 lg:py-32 overflow-hidden"
+>
+  <div
+    class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:16px_16px]"
+  >
+  </div>
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <span
+      class="inline-block py-1 px-3 rounded-full bg-yellow-400 text-indigo-900 text-sm font-bold mb-6 animate-pulse"
+    >
+      ¡Llegamos a Bolivia! 🇧🇴
+    </span>
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+      Formación en Salud Mental <br class="hidden md:block" /> y Psicodélicos
+    </h1>
+    <p class="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto mb-10">
+      Una comunidad de profesionales, investigadores y activistas. Educación
+      basada en evidencia científica y reducción de riesgos.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="#cursos"
+        class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg border-b-4 border-green-700 active:border-b-0 active:translate-y-1"
+      >
+        Ver Formaciones
+      </a>
+      <a
+        href={`https://wa.me/${CONTACT.whatsapp}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-8 rounded-lg transition-all"
+      >
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
